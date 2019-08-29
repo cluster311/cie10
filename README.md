@@ -47,6 +47,7 @@ print(cie.info(code='C02.0'))
 ## Listar valores
 
 ```python
+from cie.cie10 import CIECodes
 cie = CIECodes()
 for code, content in cie.tree.items():
     full_info = cie.info(code=code)  # load the 'multiple_descriptions' prop
@@ -67,4 +68,13 @@ Y790 Dispositivos ortopedicos asociados con incidentes adversos: dispositivos de
 
 ... 
 
+```
+
+## Listar valores
+
+```python
+from cie.cie10 import CIECodes
+cie = CIECodes()
+for code in cie.search(txt='kaposi'):
+    print(code)
 ```

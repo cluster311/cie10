@@ -97,4 +97,12 @@ class CIECodes:
     def extract_csv(self):
         with zipfile.ZipFile(self.local_zip_csv, 'r') as zip_ref:
             zip_ref.extractall(self.data_folder)
+    
+    def search(self, txt):
+        for code, content in self.tree.items():
+            full_info = self.info(code=code)
+            # saca del medio, Solr
+            full_str = ' '.join([str(val).lower() for key, val in full_info.items()])
+            if full_str.find(txt.lower()) > -1:
+                yield full_info
 
