@@ -3,6 +3,20 @@
 Acceso a los códigos CIE. Útil para referencias simples o para importar a bases de datos con mayor capacidad de busqueda.  
 Por ahora se incluye la versión 10 sin las extensiones de los paises que las tienen. Es el puntapie inicial para hacerlo.  
 
+## Origen de los datos
+
+Los datos se scrapearon de [la página oficial de los códigos en español](https://icdcode.info/espanol/cie-10/codigos.html) por [@verasativa](https://github.com/verasativa) y liberado [en GitHub](https://github.com/verasativa/CIE-10).  
+
+Esta versión incluye tambien los códigos de Chile desde [deis.cl](deis.cl).  
+
+## Instalacion
+
+```
+pip install cie
+```
+
+## Uso de la librería
+
 ```python
 from cie.cie10 import CIECodes
 cie = CIECodes()
