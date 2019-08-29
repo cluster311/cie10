@@ -1,3 +1,3 @@
-# Clasificación internacional de enfermedades, 10.ª edición 
+# Clasificación internacional de enfermedades
 
 Acceso a los códigos CIE10.  
