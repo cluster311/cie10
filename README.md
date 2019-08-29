@@ -70,7 +70,7 @@ Y790 Dispositivos ortopedicos asociados con incidentes adversos: dispositivos de
 
 ```
 
-## Listar valores
+## Buscar códigos
 
 ```python
 from cie.cie10 import CIECodes
