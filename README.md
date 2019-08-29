@@ -7,7 +7,7 @@ Por ahora se incluye la versión 10 sin las extensiones de los paises que las ti
 
 Los datos se scrapearon de [la página oficial de los códigos en español](https://icdcode.info/espanol/cie-10/codigos.html) por [@verasativa](https://github.com/verasativa) y liberado [en GitHub](https://github.com/verasativa/CIE-10).  
 
-Esta versión incluye tambien los códigos de Chile desde [deis.cl](deis.cl).  
+Esta versión incluye tambien los códigos de Chile desde [deis.cl](http://www.deis.cl/).  
 
 ## Instalacion
 
