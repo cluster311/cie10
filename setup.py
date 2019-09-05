@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='cie',
-    version='0.2',
+    version='0.200',
     license='MIT',
     author="Andrés Vazquez",
     author_email="andres@data99.com.ar",
