@@ -15,7 +15,7 @@ Esta versión incluye tambien los códigos de Chile desde [deis.cl](http://www.d
 pip install cie
 ```
 
-## Uso de la librería
+## Uso de la librería stand-alone
 
 ```python
 from cie.cie10 import CIECodes
@@ -91,3 +91,48 @@ for code in cie.search(txt='kaposi'):
 {'description': 'Sarcoma de Kaposi de múltiples órganos', 'source': 'icdcode.info', 'level': 5, 'depends_on': 'C46', 'multiple_descriptions': ['Sarcoma de Kaposi de múltiples órganos', 'Sarcoma de Kaposi', 'Tumores malignos de los tejidos mesoteliales y de los tejidos blandos', 'y afines', 'Tumores [neoplasias] malignos', 'Tumores [neoplasias]'], 'code': 'C468'}
 {'description': 'Sarcoma de Kaposi, de sitio no especificado', 'source': 'icdcode.info', 'level': 5, 'depends_on': 'C46', 'multiple_descriptions': ['Sarcoma de Kaposi, de sitio no especificado', 'Sarcoma de Kaposi', 'Tumores malignos de los tejidos mesoteliales y de los tejidos blandos', 'y afines', 'Tumores [neoplasias] malignos', 'Tumores [neoplasias]'], 'code': 'C469'}
 ```
+
+
+## Uso de la librería como aplicación Python
+
+Registra la aplicación
+
+
+```
+INSTALLED_APPS = (
+    ...
+    'cie10_django',
+    ...
+)
+```
+
+Migra los datos para crear la tabla e importar los datos al modelo. 
+
+```
+python manage.py migrate cie
+```
+
+Uso:
+
+```python
+from cie10_django.models import CIE10Code
+# cargar todos los datos a la base.
+CIE10.start_db()
+
+...
+
+INFO 14472 Imporatando código Y773
+INFO 14473 Imporatando código Y778
+INFO 14474 Imporatando código Y780
+...
+14498 codigos
+
+# ya se pueden ver los códigos en el admin de Django
+
+# ejemplo de uso
+x511 = CIE10.objects.get(code='X511')
+
+```
+
+
+
