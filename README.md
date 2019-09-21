@@ -121,16 +121,16 @@ CIE10.start_db()
 
 ...
 
-INFO 14472 Imporatando Y773
-INFO 14473 Imporatando Y778
-INFO 14474 Imporatando Y780
-
+INFO 14472 Imporatando código Y773
+INFO 14473 Imporatando código Y778
+INFO 14474 Imporatando código Y780
 ...
+14498 codigos
 
 # ya se pueden ver los códigos en el admin de Django
 
 # ejemplo de uso
-x511 = CIE10Code.objects.get(code='X511')
+x511 = CIE10.objects.get(code='X511')
 
 ```
 

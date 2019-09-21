@@ -39,10 +39,9 @@ class CIE10(models.Model):
         
         for code, content in cie.tree.items():
             logger.info(f'Vinculando código {code}')
-            
-            depon_code = content.get('depends_on', '')
-            if depon_code != '':
-                c10 = CIE10.objects.get(code=code)
+            c10 = CIE10.objects.get(code=code)
+            if c10.level > 0:
+                depon_code = content.get('depends_on', '')    
                 depon = CIE10.objects.get(code=depon_code)
                 c10.depends_on = depon
                 c10.save()
