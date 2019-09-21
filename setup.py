@@ -11,12 +11,12 @@ setuptools.setup(
     license='MIT',
     author="Andrés Vazquez",
     author_email="andres@data99.com.ar",
-    description="Lista de Códigos CIE10 en español",
+    description="Lista de Códigos CIE10 en español como librería python simple o para uso dentro de django como app",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/cluster311/cie10",
     include_package_data=True,  # for ZIP file
-    packages=['cie'],  # setuptools.find_packages(),
+    packages=['cie', 'cie10_django'],  # setuptools.find_packages(),
     extras_require={
         'django':  ["Django>=1.11"],
     },
@@ -25,7 +25,9 @@ setuptools.setup(
      'Programming Language :: Python :: 3.6',
      'License :: OSI Approved :: MIT License',
      'Operating System :: OS Independent',
-     'Intended Audience :: Developers', 
+     'Intended Audience :: Developers',
+     'Framework :: Django',
+     'Framework :: Django :: 2.2',
     ],
     python_requires='>=3.6',
 )
