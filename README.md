@@ -93,7 +93,7 @@ for code in cie.search(txt='kaposi'):
 ```
 
 
-## Uso de la librería como aplicación Python
+## Uso de la librería como aplicación Django
 
 Registra la aplicación
 
@@ -109,13 +109,13 @@ INSTALLED_APPS = (
 Migra los datos para crear la tabla e importar los datos al modelo. 
 
 ```
-python manage.py migrate cie
+python manage.py migrate cie10_django
 ```
 
 Uso:
 
 ```python
-from cie10_django.models import CIE10Code
+from cie10_django.models import CIE10
 # cargar todos los datos a la base.
 CIE10.start_db()
 
