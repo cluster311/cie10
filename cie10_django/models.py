@@ -2,6 +2,7 @@ from django.db import models
 import logging
 logger = logging.getLogger(__name__)
 
+
 class Source(models.Model):
     name = models.CharField(max_length=40)
     description = models.TextField(null=True, blank=True)
@@ -28,7 +29,7 @@ class CIE10(models.Model):
         c = 0
         for code, content in cie.tree.items():
             c += 1
-            logger.info(f'{c} Imporatando {code}')
+            logger.info(f'{c} Imporatando código {code}')
             source, created = Source.objects.get_or_create(name=content['source'])
             c10, created = CIE10.objects.get_or_create(code=code)
             c10.description = content['description']
@@ -37,10 +38,13 @@ class CIE10(models.Model):
             c10.save()
         
         for code, content in cie.tree.items():
-            logger.info(f'Vinculando {code}')
-            c10 = CIE10.objects.get(code=code)
-            depon = CIE10.objects.get(code=content['depends_on'])
-            c10.depends_on = depon
-            c10.save()
+            logger.info(f'Vinculando código {code}')
+            
+            depon_code = content.get('depends_on', '')
+            if depon_code != '':
+                c10 = CIE10.objects.get(code=code)
+                depon = CIE10.objects.get(code=depon_code)
+                c10.depends_on = depon
+                c10.save()
         
         return c

@@ -101,7 +101,7 @@ Registra la aplicación
 ```
 INSTALLED_APPS = (
     ...
-    'cie',
+    'cie10_django',
     ...
 )
 ```
@@ -115,8 +115,23 @@ python manage.py migrate cie
 Uso:
 
 ```python
->>> from cie.models import CIE10Code
->>> x511 = CIE10Code.objects.get(code='X511')
+from cie10_django.models import CIE10Code
+# cargar todos los datos a la base.
+CIE10.start_db()
+
+...
+
+INFO 14472 Imporatando Y773
+INFO 14473 Imporatando Y778
+INFO 14474 Imporatando Y780
+
+...
+
+# ya se pueden ver los códigos en el admin de Django
+
+# ejemplo de uso
+x511 = CIE10Code.objects.get(code='X511')
+
 ```
 
 
