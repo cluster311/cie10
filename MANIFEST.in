@@ -1,1 +1,2 @@
 include cie/data/cie-10.zip
+include cie10_django/migrations/0001_initial.py
