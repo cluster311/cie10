@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='cie',
-    version='0.205',
+    version='0.206',
     license='MIT',
     author="Andrés Vazquez",
     author_email="andres@data99.com.ar",
@@ -16,7 +16,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/cluster311/cie10",
     include_package_data=True,  # for ZIP file
-    packages=['cie', 'cie10_django'],  # setuptools.find_packages(),
+    packages=['cie', 'cie10_django'],
     extras_require={
         'django':  ["Django>=1.11"],
     },

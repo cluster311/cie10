@@ -133,6 +133,3 @@ INFO 14474 Imporatando código Y780
 x511 = CIE10.objects.get(code='X511')
 
 ```
-
-
-

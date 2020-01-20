@@ -1,0 +1,20 @@
+language: python
+python:
+  - 3.6
+before_install:
+  - pip install --upgrade pip
+  - pip install flake8
+# install:
+#   - pip install -r requirements.txt
+script: 
+    # stop the build if there are Python syntax errors or undefined names
+  - flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+  - python -m pytest tests/
+  
+deploy:
+    provider: pypi
+    username: "$PYPI_USER"
+    password: "$PYPI_PASSWORD"
+    distributions: "sdist bdist_wheel"
+    on:
+        branch: master

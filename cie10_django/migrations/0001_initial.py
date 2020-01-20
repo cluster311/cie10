@@ -6,11 +6,6 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
 
-    def import_data(apps, schema_editor):
-        """ leer todos los datos estáticos de la base """
-        from cie10_django.models import CIE10
-        CIE10.start_db()
-
     initial = True
 
     dependencies = [
@@ -35,6 +30,5 @@ class Migration(migrations.Migration):
                 ('depends_on', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='children', to='cie10_django.CIE10')),
                 ('source', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='codes', to='cie10_django.Source')),
             ],
-        ),
-        migrations.RunPython(import_data, lambda a, s: None)
+        )
     ]
